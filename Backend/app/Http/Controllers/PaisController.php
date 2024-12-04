@@ -19,6 +19,14 @@ class PaisController extends Controller
         'result'=> $pais
     ]);
 }
+ public function getDataById(Request $request ){
+    $pais= Pais::where('id', $request->id)->get();
+        return response()->json([
+        'status'=> '200',
+        'message'=> 'Consultado con éxito',
+        'result'=> $pais
+    ]);
+}
 
 
     //Save

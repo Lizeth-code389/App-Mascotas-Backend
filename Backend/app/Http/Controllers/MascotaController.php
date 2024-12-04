@@ -20,6 +20,15 @@ class MascotaController extends Controller
         'resul'=> $mascota
         ]);
         }
+
+        public function getDataById(Request $request ){
+            $mascota= Mascota::where('id', $request->id)->get();
+                return response()->json([
+                'status'=> '200',
+                'message'=> 'Consultado con éxito',
+                'result'=> $mascota
+            ]);
+        }
         
         
         
