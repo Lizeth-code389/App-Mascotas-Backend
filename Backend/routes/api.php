@@ -34,7 +34,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::controller(PaisController::class)->group(function () {
     Route::post('/pais/save','save');
+    //para el editar debes obtener la data por id entonces debes crear este metodo
     Route::get('/pais/datos','getData');
+    Route::get('/pais/datosById','getDataById');
     Route::put('/pais/update','update');
     Route::delete('/pais/delete','delete');
 });
@@ -42,6 +44,7 @@ Route::controller(PaisController::class)->group(function () {
 Route::controller(DepartamentoController::class)->group(function () {
     Route::post('/Departamento/save','save');
     Route::get('/Departamento/datos','getData');
+    Route::get('/Departamento/datosById','getDataById');
     Route::put('/Departamento/update','update');
     Route::delete('/Departamento/delete','delete');
 });
@@ -70,6 +73,7 @@ Route::controller(PropietarioController::class)->group(function () {
 Route::controller(MascotaController::class)->group(function () {
     Route::post('/Mascota/save','save');
     Route::get('/Mascota/datos','getData');
+    Route::get('/Mascota/datosById','getDataById');
     Route::put('/Mascota/update','update');
     Route::delete('/Mascota/delete','delete');
 });
@@ -84,6 +88,7 @@ Route::controller(CuidadoController::class)->group(function () {
 Route::controller(RazaController::class)->group(function () {
     Route::post('/Raza/save','save');
     Route::get('/Raza/datos','getData');
+    Route::get('/Raza/datosById','getDataById');
     Route::put('/Raza/update','update');
     Route::delete('/Raza/delete','delete');
 });
@@ -91,6 +96,7 @@ Route::controller(RazaController::class)->group(function () {
 Route::controller(VacunaController::class)->group(function () {
     Route::post('/Vacuna/save','save');
     Route::get('/Vacuna/datos','getData');
+    Route::get('/Vacuna/datosById','getDataById');
     Route::put('/Vacuna/update','update');
     Route::delete('/Vacuna/delete','delete');
 });

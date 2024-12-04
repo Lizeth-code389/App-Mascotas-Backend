@@ -18,6 +18,15 @@ public function getData(Request $request ){
         ]);
     }
 
+    public function getDataById(Request $request ){
+        $departamento= Departamento::where('id', $request->id)->get();
+            return response()->json([
+            'status'=> '200',
+            'message'=> 'Consultado con éxito',
+            'result'=> $departamento
+        ]);
+    }
+
         //Save        
   public function save(Request $request ){
         $departamento=Departamento::create([
